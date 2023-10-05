@@ -7,5 +7,4 @@ for i in range(ord('z'), ord('a') - 1, -1):
     else:
         result += chr(i).lower()
 
-print(result, end='')
-
+print("{}".format(result), end='')
