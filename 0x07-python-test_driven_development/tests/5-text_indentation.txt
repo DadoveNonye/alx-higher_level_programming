@@ -1,0 +1,88 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test no delim:
+    >>> text_indentation("Hello Nonye")
+    Hello Nonye
+
+Test string with spaces:
+    >>> text_indentation("Nonye          ")
+    Nonye
+
+Test string with spaces 2:
+    >>> text_indentation("        Nonye")
+    Nonye
+    
+Test string with spaces 3:
+    >>> text_indentation("        Nonye          ")
+    Nonye
+    
+Test string with empty string:
+    >>> text_indentation("")
+
+Test string with empty string 2:
+    >>> text_indentation("      ")
+
+Test simple:
+    >>> text_indentation("Hello: Nonye")
+    Hello:
+    <BLANKLINE>
+    Nonye
+
+Test delims with spaces:
+    >>> text_indentation("      ?:  :  ")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test newline 2:
+    >>> text_indentation("\n\n")
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test newline 3:
+    >>> text_indentation("Hello\n\n")
+    Hello
+    <BLANKLINE>
+
+Test all delimeters:
+    >>> text_indentation("Hello: ALX? SE. dov")
+    Hello:
+    <BLANKLINE>
+    ALX?
+    <BLANKLINE>
+    SE.
+    <BLANKLINE>
+    dov
+
+Test all delimeters with spaces at end:
+    >>> text_indentation("Hello   :     ALX    ?    SE.    dov     ")
+    Hello:
+    <BLANKLINE>
+    ALX?
+    <BLANKLINE>
+    SE.
+    <BLANKLINE>
+    dov
+
+Test just delimeters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
