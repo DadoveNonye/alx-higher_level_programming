@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-#2-rectangle.py
+#7-rectangle.py
 """Defines a rectangle"""
 
 class Rectangle:
     """Represents a rectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """Initializes a rectangle
         Args:
@@ -12,6 +15,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -50,3 +54,24 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
+
+    def __str__(self):
+        """Returns a printable rep of the rect
+        with the character # as str
+        """
+        if self.width == 0 or self.height == 0:
+            return ""
+
+        rectangle_str = ""
+        for _ in range(self.height):
+            rectangle_str += str(self.print_symbol) * self.width + "\n"
+        return rectangle_str[:-1]
+
+    def __repr__(self):
+        """recreating a new instance using eval"""
+        return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """Delete a rectangle"""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
