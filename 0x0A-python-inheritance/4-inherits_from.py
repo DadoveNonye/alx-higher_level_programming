@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 """Defines an istance of a class"""
+
 def inherits_from(obj, a_class):
     """object is an instance of a class that inherited
         (directly or indirectly) from the specified class
