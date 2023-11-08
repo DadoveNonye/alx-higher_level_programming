@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines a miInt class"""
 class MyInt(int):
     def __eq__(self, other):
         """Override the equality (==) operator"""

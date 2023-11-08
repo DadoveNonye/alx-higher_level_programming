@@ -26,11 +26,13 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
+        """Area method"""
         return self.__width * self.__height
     def __str__(self):
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
 
 class Square(Rectangle):
+    """Represents a square"""
     def __init__(self, size):
         self.integer_validator("size", size)
         super().__init__(size, size)
