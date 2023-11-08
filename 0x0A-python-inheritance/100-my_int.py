@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a miInt class"""
 class MyInt(int):
+    """A rebel class"""
     def __eq__(self, other):
         """Override the equality (==) operator"""
         return super().__ne__(other)
