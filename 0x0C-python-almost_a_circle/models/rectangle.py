@@ -64,8 +64,10 @@ class Rectangle(Base):
 
     def display(self):
         """Print the rectangle with '#' characters."""
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def validate_positive_integer(self, name, value):
         """checks if value is a positive integer."""
@@ -80,3 +82,11 @@ class Rectangle(Base):
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
+
+    def __str__(self):
+        """Overridding the str to return a string
+            representation of the Rectangle.
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
