@@ -83,10 +83,30 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
 
+    def update(self, *args, **kwargs):
+        """Public method that assigns attributes with arguments"""
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle."""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
     def __str__(self):
         """Overridding the str to return a string
             representation of the Rectangle.
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
+        self.id, self.x, self.y, self.width, self.height
+    )
