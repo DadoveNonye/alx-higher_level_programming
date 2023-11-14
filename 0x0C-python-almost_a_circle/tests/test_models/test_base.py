@@ -71,3 +71,5 @@ class TestBase_instantiation(unittest.TestCase):
     def test_frozenset_id(self):
         self.assertEqual(frozenset({1, 2, 3}), Base(frozenset({1, 2, 3})).id)
 
+if __name__ == "__main__":
+    unittest.main()
