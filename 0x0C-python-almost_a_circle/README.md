@@ -1,1 +1,14 @@
-0x0C-python-almost_a_circle
+ALMOST A CIRCLE 
+
+In this project, I reviewed everything about Python object-oriented programming
+
+Import
+Exceptions
+Class
+Private attribute
+Getter/Setter
+Class method
+Static method
+Inheritance
+Unittest
+Read/Write file
