@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Defining a base class"""
 import json
+import csv
+import turtle
 class Base:
     """implementing the base model"""
     __nb_objects = 0
@@ -47,7 +49,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """class method  that returns a list of instances"""
-        filename = cls.__name__ + ".json"
+        filename = cls.__name__ + ".csv"
         try:
             with open(filename, 'r') as file:
                 json_string = file.read()
@@ -83,3 +85,44 @@ class Base:
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draws Rectangles and Squares using the turtle module.
+
+        Args:
+            list_rectangles: A list of Rectangle objects to draw.
+            list_squares: A list of Square objects to draw.
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()

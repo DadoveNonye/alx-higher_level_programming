@@ -245,14 +245,12 @@ class TestBase_load_from_file_csv(unittest.TestCase):
     def test_load_from_file_csv_first_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
-        Rectangle.save_to_file_csv([r1, r2])
         list_rectangles_output = Rectangle.load_from_file_csv()
         self.assertEqual(str(r1), str(list_rectangles_output[0]))
 
     def test_load_from_file_csv_second_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
-        Rectangle.save_to_file_csv([r1, r2])
         list_rectangles_output = Rectangle.load_from_file_csv()
         self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
