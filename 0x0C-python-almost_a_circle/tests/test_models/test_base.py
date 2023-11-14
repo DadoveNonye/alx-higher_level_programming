@@ -8,7 +8,7 @@ from models.square import Square
 
 
 class TestBase_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Base class."""
+    """Testing instantiation of the Base class."""
 
     def test_no_arg(self):
         b1 = Base()
