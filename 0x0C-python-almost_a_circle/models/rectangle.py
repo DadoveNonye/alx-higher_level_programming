@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for Rectangle class."""
+"""Module that defines a Rectangle class."""
 from models.base import Base
 
 

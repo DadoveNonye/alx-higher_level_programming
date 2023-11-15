@@ -77,6 +77,7 @@ class Base:
         return dummy
 
     def update(self, *args, **kwargs):
+        """updating the class to add public method that assigns attributes"""
         if args:
             attrs = ["id", "width", "height", "size"]
             for attr, value in zip(attrs, args):
