@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // A  script that reads and prints the content of a file.
 
-const fs = require('fs')
+const fs = require('fs');
 
 function read_filepath(filepath){
     try{
@@ -18,4 +18,3 @@ function read_filepath(filepath){
     }
 
 }
-read_filepath()
