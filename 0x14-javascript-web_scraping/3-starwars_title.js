@@ -4,9 +4,14 @@
 const request = require('request')
 const starApi = 'https://swapi-api.alx-tools.com/api/films/:id'
 
-request.get(starApi, (error, response, body) => {
+const movieID = process.argv[2];
+const movieURl = starApi.replace(':id', movieID)
+
+request.get(movieURl, (error, response, body) => {
     if (error){
         console.log(error);
     }
-    console.log(response.name)
+    const movieData = JSON.parse(body)
+    const movieTitle = movieData.title
+    console.log(movieTitle)
 })
