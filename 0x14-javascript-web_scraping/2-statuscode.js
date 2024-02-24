@@ -4,6 +4,6 @@
 const request = require('request')
 
 request.get(process.argv[2], (response) => {
-    statusCode = response.statusCode
+    statusCode = response.statusCode;
     console.log('code :', {statusCode})
 })
