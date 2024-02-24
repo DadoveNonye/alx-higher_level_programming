@@ -7,6 +7,6 @@ request.get(process.argv[2], (error, response, body) => {
     if (error){
         console.log(error)
     }
-    const statusCode = response;
-    console.log('code:', {statusCode})
+    const status = response.statusCode;
+    console.log('code :', {status})
 })
