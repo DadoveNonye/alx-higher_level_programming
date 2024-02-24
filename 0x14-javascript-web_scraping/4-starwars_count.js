@@ -3,7 +3,7 @@
 const request = require('request');
 const starsApi = 'https://swapi-api.alx-tools.com/api/films/';
 const WedgeID = 18;
-const count = 0
+let count = 0
 
 request.get(starsApi, (error, response, body) => {
     if (error){
