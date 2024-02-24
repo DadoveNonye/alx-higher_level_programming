@@ -5,7 +5,7 @@ const request = require('request')
 
 request.get(process.argv[2], process.argv[3], {encoding: 'utf-8'}, (err, data) =>{
     if (err){
-        console.error(err);
+        console.log(err);
     }else{
         console.log(data)
     }
