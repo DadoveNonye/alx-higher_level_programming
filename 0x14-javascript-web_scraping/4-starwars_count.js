@@ -14,8 +14,9 @@ request.get(starsApi, (error, response, body) => {
             if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${WedgeID}/`)){
                 count++;
             }
-            console.log(count)
+           
         });
+        console.log(count);
     }
     
 })
